@@ -34,14 +34,17 @@
 		  	 	</td>
 		  	 	<td>
 		  	 		<a class="btn btn-warning" href="/orangtua/{{$data->id}}/edit">Edit</a> </td>
+		  	 		
 		  	 		<td> 
 		  	 		<form action="{{route('orangtua.destroy',$data->id)}}" method="post">
 		  	 			<input name="_method" type="hidden" value="DELETE">
 		  	 			<input name="_token" type="hidden">
+		  	 			<a class="btn btn-primary" href="/orangtua/{{$data->id}}">Show</a>
+		  	 			<td>
 		  	 			<input class="btn btn-danger"  type="submit" value="Delete">
 		  	 			{{csrf_field()}}
-		  	 			<a class="btn btn-primary" href="/orangtua/{{$data->id}}">Show</a> </td>
 		  	 		</form>
+		  	 		</td>
 		  	 	</td>
 		  	 	</tr>
 		  	 	@endforeach

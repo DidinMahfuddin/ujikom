@@ -110,4 +110,6 @@ Route::get('/coba2', 'mycontroller@tampilmodel');
 Route::get('/coba3', 'mycontroller@tampilview');
 Route::get('/coba4', 'mycontroller@percobaan');
 
+Auth::routes();
 Route::resource('orangtua', 'OrangtuaController');
+Route::resource('siswa', 'SiswaController');
