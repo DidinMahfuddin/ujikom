@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Session;
 use App\Barang;
 use App\Penjualan;
 use App\Http\Requests\PenjualanRequest;
@@ -46,6 +47,8 @@ class TransaksiController extends Controller
     {
         //
         $barang = Barang::findOrFail($request->barang);
+        if ($barang->stok >= $request->e) 
+         {
         $transaksi = new Penjualan();
         $transaksi->kode_transaksi = $request->a;
         $transaksi->id_barang = $request->barang;
@@ -56,6 +59,13 @@ class TransaksiController extends Controller
         $barang->save();
         $transaksi->total_harga = $request->d*$request->e;
         $transaksi->save();
+      }
+        else{
+            Session::flash("flash_notification",[
+                "level"=>"danger",
+                "message"=>"Stok Tidak Mencukupi"]);
+            return redirect('/admin/transaksi/create');
+        }
         return redirect('/admin/transaksi');
     }
 
@@ -121,4 +131,5 @@ class TransaksiController extends Controller
         $transaksi->delete();
         return redirect('/admin/transaksi');
     }
+    
 }

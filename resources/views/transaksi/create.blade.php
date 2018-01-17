@@ -9,6 +9,7 @@
 		<div class="panel-title pull-right"><a href="{{URL::previous()}}">Kembali</a></div></div>
 
 		<div class="panel-body">
+			@include('layouts._flash')
 			@if($errors->any())
 			<div class="flash alert-danger">
 				@foreach($errors->all() as $err)

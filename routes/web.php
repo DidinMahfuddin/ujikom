@@ -23,6 +23,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
 	Route::resource('barang','BarangController');
 	Route::resource('pembelian','PembelianController');
 	Route::resource('transaksi','TransaksiController');
+	
+	Route::get('/laporan','LaporanController@index');
+	Route::post('/laporan/detail','LaporanController@index2');
 });
 });
 Auth::routes();

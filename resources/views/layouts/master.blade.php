@@ -153,7 +153,7 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Data Barang</span>
+          <a href="#"><i class="fa fa-link"></i> <span>Stok Barang</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -175,6 +175,7 @@ desired effect
             <li><a href="{{url('admin/transaksi')}}">Penjualan</a></li>
           </ul>
         </li>
+        <li><a href="{{url('admin/laporan')}}"><i class="fa fa-link"></i> <span>Laporan</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
